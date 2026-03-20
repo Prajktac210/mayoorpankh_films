@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mayoorpankh Films</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ===== GLOBAL ===== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+position:absolute;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 50px;
+z-index:10;
+}
+
+/* LOGO */
+.logo img{
+height:120px;
+}
+
+/* NAV LINKS */
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin:0 15px;
+position:relative;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#fff;
+font-size:14px;
+transition:0.3s;
+}
+
+/* 🔥 CLICK + HOVER ANIMATION */
+nav ul li a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#fff;
+transition:0.4s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after{
+width:100%;
+}
+
+nav ul li a:active{
+transform:scale(0.9);
+}
+
+/* ===== HERO ===== */
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+background-size:cover;
+background-position:center;
+transition:background-image 1s ease-in-out;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.6);
+}
+
+/* CONTENT */
+.content{
+position:relative;
+z-index:2;
+animation: fadeUp 1.5s ease;
+}
+
+.content h1{
+font-size:3rem;
+letter-spacing:3px;
+}
+
+.content p{
+margin:15px 0;
+color:#ccc;
+}
+
+/* BUTTONS */
+.buttons{
+margin-top:20px;
+}
+
+.btn{
+padding:12px 25px;
+margin:10px;
+border:none;
+cursor:pointer;
+transition:0.4s;
+}
+
+.primary{
+background:#fff;
+color:#000;
+}
+
+.outline{
+border:1px solid #fff;
+background:transparent;
+color:#fff;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* SOCIAL ICONS */
+.social{
+position:fixed;
+right:20px;
+bottom:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.social a{
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:20px;
+color:#fff;
+text-decoration:none;
+}
+
+.instagram{
+background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf);
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+.logo img{
+height:60px;
+}
+.content h1{
+font-size:2rem;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+<div class="logo">
+<img src="images/logo-removebg-preview.png">
+</div>
+
+<ul>
+<li><a href="#" class="active">Portfolio</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+
+<div class="content">
+<h1>MAYOORPANKH FILMS</h1><p>From Weddings to Every Special Event — We Tell Your Story Cinematically</p>
+<div class="buttons">
+<!-- BOOK NOW -->
+<a href="tel:+918329682942">
+<button class="btn primary">BOOK YOUR DATE</button>
+</a>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/918329682942?text=Hello%20Mayoorpankh%20Films,%20I%20want%20to%20book%20your%20photography%20services." target="_blank">
+<button class="btn outline">WHATSAPP ENQUIRY</button>
+</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- SOCIAL -->
+<div class="social">
+<a href="https://www.instagram.com/mayoorpankhfilms?igsh=cjByMGc2ZTFzZzQ2" class="instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/918329682942" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<script>
+
+/* ===== BACKGROUND SLIDER ===== */
+const images = [
+ "https://images.unsplash.com/photo-1519741497674-611481863552",
+ "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+];
+
+let index = 0;
+const hero = document.getElementById("hero");
+
+function changeBackground(){
+    hero.style.backgroundImage = `url(${images[index]})`;
+    index = (index + 1) % images.length;
+}
+
+/* Start slider */
+changeBackground();
+setInterval(changeBackground, 3000);
+
+/* ===== NAV CLICK ACTIVE ===== */
+const links = document.querySelectorAll("nav ul li a");
+
+links.forEach(link=>{
+    link.addEventListener("click", function(){
+        links.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+    });
+});
+
+</script>
+
+</body>
+</html>
