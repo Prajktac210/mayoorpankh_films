@@ -150,8 +150,8 @@ bottom:20px;
 display:flex;
 flex-direction:column;
 gap:15px;
+z-index:9999; /* IMPORTANT  solve problem*/ 
 }
-
 .social a{
 width:50px;
 height:50px;
@@ -162,8 +162,8 @@ border-radius:50%;
 font-size:20px;
 color:#fff;
 text-decoration:none;
+z-index:9999;
 }
-
 .instagram{
 background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf);
 }
@@ -201,9 +201,8 @@ font-size:2rem;
 </div>
 
 <ul>
-<li><a href="#" class="active">Portfolio</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Contact</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 
 </nav>
@@ -276,6 +275,49 @@ font-size:2rem;
             <div class="overlay">cultural and fire-breathing shots</div>
         </div>
     </div>
+    </div>
+<!-- ===== HEADER ===== -->
+<div class="header">
+<h1>Cinematography</h1>
+<p>Turning your moments into cinematic stories that live forever.</p>
+</div>
+
+<!-- ===== VIDEO SECTION ===== -->
+<div class="video-container">
+
+<div class="video-card">
+<video src="videos/4_5899080316257045180.mp4" autoplay muted loop playsinline preload="metadata"></video>
+<div class="play-icon">▶</div>
+</div>
+
+<div class="video-card">
+<video src="videos/4_5896415452258634287.mp4" autoplay muted loop playsinline preload="metadata"></video>
+<div class="play-icon">▶</div>
+</div>
+
+<div class="video-card">
+<video src="videos/4_5896607248318204473.mp4" autoplay muted loop playsinline preload="metadata"></video>
+<div class="play-icon">▶</div>
+</div>
+<div class="video-card">
+<video src="videos/4_5898916828326922812.mp4" autoplay muted loop playsinline preload="metadata"></video>
+<div class="play-icon">▶</div>
+</div>
+<div class="video-card">
+<video src="videos/4_5898788881251175056.mp4" autoplay muted loop playsinline preload="metadata"></video>
+<div class="play-icon">▶</div>
+</div>
+
+
+
+<div class="video-card">
+<video src="videos/4_5899006232366156282.mp4" autoplay muted loop playsinline preload="metadata"></video>
+<div class="play-icon">▶</div>
+</div>
+
+</div>
+
+
 
     <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">

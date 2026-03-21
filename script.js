@@ -25,3 +25,5 @@ const galleryItems = document.querySelectorAll(".gallery-item");
         galleryItems.forEach(item => {
             observer.observe(item);
         });
+        //video 
+        
