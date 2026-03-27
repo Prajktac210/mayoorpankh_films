@@ -304,43 +304,43 @@ font-size:2rem;
 <div class="video-container">
 
 <div class="video-card">
-<video src="videos/4_5899080316257045180.mp4" autoplay muted loop playsinline preload="metadata"></video>
+<video src="videos/4_5896415452258634287.mp4" autoplay muted loop playsinline controls></video>
 <div class="play-icon">▶</div>
 </div>
 
 <div class="video-card">
-<video src="videos/4_5896415452258634287.mp4" autoplay muted loop playsinline preload="metadata"></video>
+<video src="videos/4_5899080316257045180.mp4" autoplay muted loop playsinline controls></video>
 <div class="play-icon">▶</div>
 </div>
 
 <div class="video-card">
-<video src="videos/4_5896607248318204473.mp4" autoplay muted loop playsinline preload="metadata"></video>
+<video src="videos/4_5896607248318204473.mp4" autoplay muted loop playsinline controls></video>
 <div class="play-icon">▶</div>
 </div>
-<div class="video-card">
-<video src="videos/4_5898916828326922812.mp4" autoplay muted loop playsinline preload="metadata"></video>
-<div class="play-icon">▶</div>
-</div>
-<div class="video-card">
-<video src="videos/4_5898788881251175056.mp4" autoplay muted loop playsinline preload="metadata"></video>
-<div class="play-icon">▶</div>
-</div>
-
-
 
 <div class="video-card">
-<video src="videos/4_5899006232366156282.mp4" autoplay muted loop playsinline preload="metadata"></video>
+<video src="videos/4_5899006232366156282.mp4" autoplay muted loop playsinline controls></video>
+<div class="play-icon">▶</div>
+</div>
+
+<div class="video-card">
+<video src="videos/4_5898788881251175056.mp4" autoplay muted loop playsinline controls></video>
+<div class="play-icon">▶</div>
+</div>
+
+<div class="video-card">
+<video src="videos/4_5898916828326922812.mp4" autoplay muted loop playsinline controls></video>
 <div class="play-icon">▶</div>
 </div>
 
 </div>
 
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox">
+<video id="lightbox-video" controls autoplay></video>
+</div>
 
-
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox">
-        <img id="lightbox-img">
-    </div>
+<!-- ===== FOOTER ===== -->
     <footer class="footer">
     <p>© 2026 All Rights Reserved | Designed by <span>PC Creation</span></p>
 </footer>
@@ -349,6 +349,24 @@ font-size:2rem;
 
 <script>
 
+/* ===== LIGHTBOX VIDEO ===== */
+const videos = document.querySelectorAll(".video-card video");
+const lightbox = document.getElementById("lightbox");
+const lightboxVideo = document.getElementById("lightbox-video");
+
+videos.forEach(video => {
+    video.addEventListener("click", () => {
+        lightbox.classList.add("active");
+        lightboxVideo.src = video.src;
+    });
+});
+
+/* CLOSE LIGHTBOX */
+lightbox.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+    lightboxVideo.pause();
+    lightboxVideo.src = "";
+});
 /* ===== BACKGROUND SLIDER ===== */
 const images = [
  "https://images.unsplash.com/photo-1519741497674-611481863552",
