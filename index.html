@@ -19,6 +19,16 @@ font-family:'Poppins',sans-serif;
 body{
 background:#000;
 color:#fff;
+
+}
+.bg-img {
+    position: absolute;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
 /* ===== NAVBAR ===== */
@@ -35,7 +45,7 @@ z-index:10;
 
 /* LOGO */
 .logo img{
-height:120px;
+height:140px;
 }
 
 /* NAV LINKS */
@@ -79,6 +89,8 @@ transform:scale(0.9);
 
 /* ===== HERO ===== */
 .hero{
+    height: 100vh;
+    overflow: hidden; 
 height:100vh;
 display:flex;
 justify-content:center;
@@ -86,10 +98,23 @@ align-items:center;
 text-align:center;
 position:relative;
 background-size:cover;
+ background: url("images/ChatGPT\ Image\ Mar\ 27\,\ 2026\,\ 07_32_40\ PM.png") no-repeat center center/cover;
 background-position:center;
 transition:background-image 1s ease-in-out;
 }
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/ChatGPT\ Image\ Mar\ 27\,\ 2026\,\ 07_32_40\ PM.png") no-repeat center/cover;
+    animation: zoom 10s infinite alternate;
+    z-index: -1;
+}
 
+@keyframes zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
 .hero::before{
 content:"";
 position:absolute;
@@ -181,7 +206,7 @@ to{opacity:1; transform:translateY(0);}
 /* RESPONSIVE */
 @media(max-width:600px){
 .logo img{
-height:80px;
+height:95px;
 }
 .content h1{
 font-size:2rem;
@@ -215,7 +240,7 @@ font-size:2rem;
 <nav>
 
 <div class="logo">
-<img src="images/logo-removebg-preview.png">
+<img src="images/Mayoorpankh_Films_logo_design-removebg-preview.png">
 </div>
 
 <ul>
@@ -243,7 +268,7 @@ font-size:2rem;
 </div>
 
 </div>
-
+<img src="images/ChatGPT Image Mar 27, 2026, 07_32_40 PM.png" class="bg-img">
 </section>
 
 <!-- SOCIAL -->
@@ -305,32 +330,31 @@ font-size:2rem;
 
 <div class="video-card">
 <video src="videos/4_5896415452258634287.mp4" autoplay muted loop playsinline controls></video>
-<div class="play-icon">▶</div>
+
 </div>
 
 <div class="video-card">
 <video src="videos/4_5899080316257045180.mp4" autoplay muted loop playsinline controls></video>
-<div class="play-icon">▶</div>
+
 </div>
 
 <div class="video-card">
 <video src="videos/4_5896607248318204473.mp4" autoplay muted loop playsinline controls></video>
-<div class="play-icon">▶</div>
+
 </div>
 
 <div class="video-card">
 <video src="videos/4_5899006232366156282.mp4" autoplay muted loop playsinline controls></video>
-<div class="play-icon">▶</div>
+
 </div>
 
 <div class="video-card">
 <video src="videos/4_5898788881251175056.mp4" autoplay muted loop playsinline controls></video>
-<div class="play-icon">▶</div>
+
 </div>
 
 <div class="video-card">
 <video src="videos/4_5898916828326922812.mp4" autoplay muted loop playsinline controls></video>
-<div class="play-icon">▶</div>
 </div>
 
 </div>
@@ -367,23 +391,23 @@ lightbox.addEventListener("click", () => {
     lightboxVideo.pause();
     lightboxVideo.src = "";
 });
-/* ===== BACKGROUND SLIDER ===== */
-const images = [
- "https://images.unsplash.com/photo-1519741497674-611481863552",
- "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
-];
+// /* ===== BACKGROUND SLIDER ===== */
+// const images = [
+//  "https://images.unsplash.com/photo-1519741497674-611481863552",
+//  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+// ];
 
-let index = 0;
-const hero = document.getElementById("hero");
+// let index = 0;
+// const hero = document.getElementById("hero");
 
-function changeBackground(){
-    hero.style.backgroundImage = `url(${images[index]})`;
-    index = (index + 1) % images.length;
-}
+// function changeBackground(){
+//     hero.style.backgroundImage = `url(${images[index]})`;
+//     index = (index + 1) % images.length;
+// }
 
-/* Start slider */
-changeBackground();
-setInterval(changeBackground, 3000);
+// /* Start slider */
+// changeBackground();
+// setInterval(changeBackground, 1000);
 
 /* ===== NAV CLICK ACTIVE ===== */
 const links = document.querySelectorAll("nav ul li a");
