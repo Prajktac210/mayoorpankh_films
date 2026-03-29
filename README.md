@@ -54,19 +54,6 @@ git clone https://github.com/Prajktac210/mayoorpankh_films.git
 
 3. Run `index.html` in your browser
 
----
-
-## 📷 Preview
-
-(Add your website screenshots here for better visibility)
-
----
-
-## 🔑 Keywords (SEO)
-
-Wedding Photographer Pune, Pre Wedding Shoot Pune, Cinematic Wedding Films Maharashtra, Photography Portfolio Website
-
----
 
 ## 🤝 Connect With Me
 
