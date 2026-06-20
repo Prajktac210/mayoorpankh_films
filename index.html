@@ -72,7 +72,7 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 50px;
+padding:10px 20px;
 z-index:10;
 }
 
@@ -94,8 +94,8 @@ position:relative;
 
 nav ul li a{
 text-decoration:none;
-color:#fff;
-font-size:14px;
+color:#333131;
+font-size:20px;
 transition:0.3s;
 }
 
@@ -131,7 +131,7 @@ align-items:center;
 text-align:center;
 position:relative;
 background-size:cover;
- background: url("images/ChatGPT\ Image\ Mar\ 27\,\ 2026\,\ 07_32_40\ PM.png") no-repeat center center/cover;
+ background: url("./images/nature.png") no-repeat center center/cover;
 background-position:center;
 transition:background-image 1s ease-in-out;
 }
@@ -139,7 +139,7 @@ transition:background-image 1s ease-in-out;
     content: "";
     position: absolute;
     inset: 0;
-    background: url("images/ChatGPT\ Image\ Mar\ 27\,\ 2026\,\ 07_32_40\ PM.png") no-repeat center/cover;
+    background: url("./images/nature.png") no-repeat center/cover;
     animation: zoom 10s infinite alternate;
     z-index: -1;
 }
@@ -164,12 +164,13 @@ animation: fadeUp 1.5s ease;
 
 .content h1{
 font-size:3rem;
+color: rgb(108, 109, 110);
 letter-spacing:3px;
 }
 
 .content p{
 margin:15px 0;
-color:#ccc;
+color:#353535;
 }
 
 /* BUTTONS */
@@ -241,9 +242,31 @@ to{opacity:1; transform:translateY(0);}
 .logo img{
 height:95px;
 }
+ nav ul li a {
+        color: #fff;
+    }
 .content h1{
 font-size:2rem;
 }
+}
+.desktop-logo{
+    display: block;
+    height: 140px;
+}
+
+.mobile-logo{
+    display: none;
+    height: 95px;
+}
+
+@media (max-width: 600px){
+    .desktop-logo{
+        display: none;
+    }
+
+    .mobile-logo{
+        display: block;
+    }
 }
 /* ===== FOOTER ===== */
 .footer {
@@ -273,7 +296,10 @@ font-size:2rem;
 <nav>
 
 <div class="logo">
-<img src="images/Mayoorpankh_Films_logo_design-removebg-preview.png">
+<div class="logo">
+    <img src="images/desktop.png" class="desktop-logo">
+    <img src="images/mobile.png" class="mobile-logo">
+</div>
 </div>
 
 <ul>
@@ -301,7 +327,7 @@ font-size:2rem;
 </div>
 
 </div>
-<img src="images/ChatGPT Image Mar 27, 2026, 07_32_40 PM.png" class="bg-img">
+<img src="./images/nature.png" class="bg-img">
 </section>
 
 <!-- SOCIAL -->
